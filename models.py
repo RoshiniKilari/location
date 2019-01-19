@@ -18,7 +18,7 @@ class User(db.Model):
     self.set_password(password)
 
   def set_password(self, password):
-    self.pwdhash = generate_password_hash(password)
-
+    self.pwdhash = generate_password_hash(password) #to generate encrypted password
+  
   def check_password(self, password):
     return check_password_hash(self.pwdhash, password)
